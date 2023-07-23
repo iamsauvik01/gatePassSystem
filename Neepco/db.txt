@@ -1,0 +1,17 @@
+database name: Neepco
+
+
+CREATE TABLE visitor_details (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  phone_number VARCHAR(20) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  address VARCHAR(200) NOT NULL,
+  pass_type VARCHAR(20) NOT NULL,
+  photo BLOB, -- Change the data type to match the appropriate image storage
+  appointee VARCHAR(100) NOT NULL,
+  entry_time DATETIME NOT NULL,
+  exit_time TIME NOT NULL
+);
+
+
