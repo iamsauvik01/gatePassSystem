@@ -1,0 +1,147 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script defer src="./index.js"></script>
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+
+    <title>Gate System Application</title>
+  </head>
+
+  <body>
+    <section class="left-wrapper">
+      <img class="image" src="./Images/image.jpg" alt="" />
+      <nav>
+        <ul class="nav-ul-one">
+          <li>
+            <a href="">
+              <img class="logo" src="./Images/logo.png" alt="" />
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <h1 class="neepco">NEEPCO</h1>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="nav-ul-two">
+          <li>
+            <a href="">
+              <i class="fa-brands fa-twitter fa-xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa-brands fa-facebook fa-xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href=""> Official Website </a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="right-wrapper">
+
+      <h1 class="form-heading">Get Your Gate Pass</h1>
+
+      <form  id="gatePassForm" action="process_form.php" method="POST" enctype="multipart/form-data" onsubmit="formSubmitted(event)">
+        <div class="form-elements-container">
+          <label for="Name">Name:</label>
+          <input type="text" name="name" />
+        </div>
+
+        <div class="form-elements-container">
+          <label for="PhoneNumber">Phone Number:</label>
+          <input type="tel" name="phoneNumber" />
+        </div>
+
+        <div class="form-elements-container">
+          <label for="Email">E-mail Id:</label>
+          <input type="email" name="email" />
+        </div>
+
+        <div class="form-elements-container">
+          <label for="Address">Address:</label>
+          <input type="text" name="address" />
+        </div>
+
+        <div class="option-and-photo-wrapper">
+
+          <div class="option-container">
+            <label for="Pass-Type">Select pass Type</label>
+            <select class="sub-input" name="pass-type">
+              <option value="Single">Single Pass</option>
+              <option value="Multiple">Multiple Pass</option>
+            </select>
+          </div>
+
+          <div class="photo-container">
+            <label for="Photo">Select a picture</label>
+            <input class="sub-input" type="file" name="file" id="fileInput">
+          </div>
+        </div>
+
+        <div class="form-elements-container">
+          <label for="Appointee">Appointee:</label>
+          <input type="text" name="appointee" />
+        </div>
+
+        <div class="time-elements-container">
+          <div class="sub-input" class="entry-time-container">
+            <label for="Entry Date and Time">Entry Date and Time</label>
+            <input type="datetime-local" name="entryTime" />
+          </div>
+
+          <div class="exit-time-container">
+            <label for="Exit Time">Exit Time</label>
+            <input class="sub-input" type="time" name="exitTime" />
+          </div>
+        </div>
+
+        <input class="submit" name="submit" type="submit" value="Submit">
+      </form>
+    </section>
+    <div class="modal-wrapper">
+
+  <div class="modal-container">
+
+    <i onclick="closeModal()" class="fa-solid fa-xmark fa-2xl"></i>
+
+    <div class="modal-header-container">
+      <img class="modalImage" src="./Images/modalImage.png" alt="">
+      <h1>Registered Succesfully</h1>
+    </div>
+    
+
+      <div class="modal-button-container">
+
+        <button onclick="pdfForm()">Download PDF</button>
+        <button onclick="printForm()">Print</button>
+
+      </div>
+  </div>
+  </div>
+    
+  </body>
+
+  </html>
